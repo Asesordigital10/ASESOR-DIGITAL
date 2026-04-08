@@ -1,0 +1,342 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asesor Digital UY | Tu negocio en automático</title>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-color: #0a0a0b;
+            --card-bg: #161618;
+            --accent-green: #25D366;
+            --text-white: #ffffff;
+            --text-gray: #a1a1aa;
+            --border: #27272a;
+            --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-white);
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        /* Cabecera */
+        .header-section {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .profile-pic {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent-green), #128C7E);
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            font-weight: 900;
+            color: white;
+            border: 3px solid var(--card-bg);
+            box-shadow: 0 0 20px rgba(37, 211, 102, 0.2);
+        }
+
+        h1 {
+            font-size: 1.6rem;
+            font-weight: 900;
+            letter-spacing: -0.02em;
+            margin-bottom: 8px;
+        }
+
+        .tagline {
+            color: var(--text-gray);
+            font-size: 1rem;
+            max-width: 280px;
+            margin: 0 auto;
+        }
+
+        /* Contenedor Principal */
+        .content-width {
+            width: 100%;
+            max-width: 450px;
+        }
+
+        /* Sección de Demos */
+        .section-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-gray);
+            margin: 30px 0 15px 10px;
+            font-weight: 700;
+            display: block;
+        }
+
+        .links-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .link-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            color: var(--text-white);
+            text-decoration: none;
+            padding: 16px 20px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            box-shadow: var(--shadow);
+        }
+
+        .link-card i {
+            width: 32px;
+            font-size: 1.2rem;
+            color: var(--accent-green);
+        }
+
+        .link-card:active {
+            transform: scale(0.97);
+            background-color: #1c1c1f;
+        }
+
+        /* Botón CTA (WhatsApp) */
+        .cta-wrapper {
+            margin-top: 25px;
+        }
+
+        .cta-btn {
+            background-color: var(--accent-green);
+            color: #000;
+            text-decoration: none;
+            padding: 20px;
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-weight: 800;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); box-shadow: 0 0 40px rgba(37, 211, 102, 0.5); }
+            100% { transform: scale(1); }
+        }
+
+        /* Sección Servicios */
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        .service-item {
+            background: #111113;
+            padding: 20px;
+            border-radius: 16px;
+            border-left: 4px solid var(--accent-green);
+        }
+
+        .service-item h3 {
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+
+        .service-item p {
+            font-size: 0.85rem;
+            color: var(--text-gray);
+            line-height: 1.4;
+        }
+
+        /* Sección FAQ */
+        .faq-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        details {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        summary {
+            padding: 15px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        summary::after {
+            content: '+';
+            color: var(--accent-green);
+            font-size: 1.2rem;
+        }
+
+        details[open] summary::after {
+            content: '-';
+        }
+
+        .faq-content {
+            padding: 0 15px 15px 15px;
+            font-size: 0.85rem;
+            color: var(--text-gray);
+            line-height: 1.5;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 60px;
+            text-align: center;
+            padding-bottom: 20px;
+        }
+
+        .socials {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 15px;
+        }
+
+        .socials a {
+            color: var(--text-gray);
+            font-size: 1.4rem;
+        }
+
+        .copy {
+            font-size: 0.7rem;
+            color: #444;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="content-width">
+        <!-- HEADER -->
+        <header class="header-section">
+            <div class="profile-pic">AD</div>
+            <h1>Asesor Digital UY</h1>
+            <p class="tagline">Digitalizamos tu negocio con sistemas automáticos sin costos mensuales.</p>
+        </header>
+
+        <!-- CTA PRINCIPAL -->
+        <div class="cta-wrapper">
+            <a href="https://wa.me/59895418669?text=Hola%20Juan,%20quiero%20digitalizar%20mi%20negocio" class="cta-btn">
+                <i class="fa-brands fa-whatsapp"></i> ¡QUIERO MI SISTEMA AHORA!
+            </a>
+        </div>
+
+        <!-- SECCIÓN DEMOS -->
+        <span class="section-label">Explora nuestras Demos</span>
+        <div class="links-container">
+            <a href="https://jotacege68-lgtm.github.io/DEMO-VIEJO-PANCHO/" target="_blank" class="link-card">
+                <i class="fa-solid fa-pizza-slice"></i>
+                Demo Pizzería
+            </a>
+            <a href="#" class="link-card">
+                <i class="fa-solid fa-wrench"></i>
+                Demo Taller Mecánico
+            </a>
+            <a href="#" class="link-card">
+                <i class="fa-solid fa-calendar-days"></i>
+                Demo Agenda Digital
+            </a>
+        </div>
+
+        <!-- SECCIÓN SERVICIOS -->
+        <span class="section-label">Nuestros Servicios</span>
+        <div class="services-grid">
+            <div class="service-item">
+                <h3>Menú Digital</h3>
+                <p>Catálogo interactivo con pedidos directos a tu WhatsApp. Ideal para gastronomía y tiendas.</p>
+            </div>
+            <div class="service-item">
+                <h3>Agendas Online</h3>
+                <p>Sistema de turnos para que tus clientes reserven 24/7 sin que tengas que responder mensajes.</p>
+            </div>
+            <div class="service-item">
+                <h3>Gestión de Talleres</h3>
+                <p>Seguimiento de reparaciones y presupuestos digitales para mayor transparencia.</p>
+            </div>
+        </div>
+
+        <!-- SECCIÓN PREGUNTAS FRECUENTES -->
+        <span class="section-label">Preguntas Frecuentes</span>
+        <div class="faq-container">
+            <details>
+                <summary>¿Tiene costo mensual?</summary>
+                <div class="faq-content">
+                    No. Nuestro modelo es de pago único por el desarrollo. Te olvidas de las suscripciones y mensualidades.
+                </div>
+            </details>
+            <details>
+                <summary>¿Cuánto demora la entrega?</summary>
+                <div class="faq-content">
+                    Una vez que tenemos tu logo y lista de precios, el sistema está listo para funcionar en 48 a 72 horas hábiles.
+                </div>
+            </details>
+            <details>
+                <summary>¿Cómo recibo los pedidos?</summary>
+                <div class="faq-content">
+                    Todos los pedidos llegan detallados directamente a tu WhatsApp con nombre, productos, total y ubicación del cliente.
+                </div>
+            </details>
+        </div>
+
+        <!-- FOOTER -->
+        <footer>
+            <div class="socials">
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            </div>
+            <p class="copy">&copy; 2024 ASESOR DIGITAL UY</p>
+        </footer>
+    </div>
+
+</body>
+</html>
+
+```
