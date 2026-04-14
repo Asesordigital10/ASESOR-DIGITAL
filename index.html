@@ -1,342 +1,309 @@
-```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Asesor Digital UY | Tu negocio en automático</title>
+    <title>Asesor Digital UY | Digitaliza tu negocio</title>
     
-    <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome para iconos -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            --bg-color: #0a0a0b;
-            --card-bg: #161618;
-            --accent-green: #25D366;
-            --text-white: #ffffff;
-            --text-gray: #a1a1aa;
-            --border: #27272a;
-            --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+            --bg-dark: #0f1115;
+            --bg-card: #1a1d24;
+            --text-main: #ffffff;
+            --text-secondary: #a0aec0;
+            --whatsapp-green: #25D366;
+            --accent-blue: #3182ce;
+            --card-border: rgba(255, 255, 255, 0.08);
         }
 
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
             -webkit-tap-highlight-color: transparent;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
-
         body {
-            background-color: var(--bg-color);
-            color: var(--text-white);
-            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
-            min-height: 100vh;
-            padding: 40px 20px;
+            padding: 2rem 1.2rem;
+            line-height: 1.6;
         }
 
-        /* Cabecera */
-        .header-section {
+        .container {
+            width: 100%;
+            max-width: 500px;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        /* --- CABECERA --- */
+        header {
             text-align: center;
-            margin-bottom: 40px;
         }
 
-        .profile-pic {
+        .profile-img {
             width: 100px;
             height: 100px;
             border-radius: 50%;
-            background: linear-gradient(135deg, var(--accent-green), #128C7E);
-            margin: 0 auto 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 36px;
-            font-weight: 900;
-            color: white;
-            border: 3px solid var(--card-bg);
-            box-shadow: 0 0 20px rgba(37, 211, 102, 0.2);
+            object-fit: cover;
+            border: 3px solid var(--whatsapp-green);
+            padding: 4px;
+            background-color: var(--bg-dark);
+            margin-bottom: 1rem;
+            box-shadow: 0 0 20px rgba(37, 211, 102, 0.15);
         }
 
         h1 {
             font-size: 1.6rem;
-            font-weight: 900;
-            letter-spacing: -0.02em;
-            margin-bottom: 8px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 0.5rem;
         }
 
-        .tagline {
-            color: var(--text-gray);
-            font-size: 1rem;
-            max-width: 280px;
-            margin: 0 auto;
+        .intro-text {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            font-weight: 300;
         }
 
-        /* Contenedor Principal */
-        .content-width {
-            width: 100%;
-            max-width: 450px;
+        .highlight {
+            color: var(--whatsapp-green);
+            font-weight: 600;
         }
 
-        /* Sección de Demos */
-        .section-label {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--text-gray);
-            margin: 30px 0 15px 10px;
+        /* --- SECCIÓN SERVICIOS --- */
+        .section-title {
+            font-size: 1.2rem;
             font-weight: 700;
-            display: block;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--whatsapp-green);
+            padding-left: 10px;
         }
 
-        .links-container {
+        .services-grid {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 1rem;
         }
 
-        .link-card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border);
-            color: var(--text-white);
-            text-decoration: none;
-            padding: 16px 20px;
+        .service-card {
+            background: var(--bg-card);
+            border: 1px solid var(--card-border);
             border-radius: 16px;
+            padding: 1.2rem;
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .service-icon {
+            font-size: 1.8rem;
+            background: rgba(255,255,255,0.05);
+            padding: 10px;
+            border-radius: 12px;
+            min-width: 55px;
+            text-align: center;
+        }
+
+        .service-content h3 {
+            font-size: 1.05rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .service-content p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .service-target {
+            display: inline-block;
+            font-size: 0.75rem;
+            background: rgba(37, 211, 102, 0.1);
+            color: var(--whatsapp-green);
+            padding: 2px 8px;
+            border-radius: 20px;
+            margin-top: 6px;
+            font-weight: 600;
+        }
+
+        /* --- PRECIOS --- */
+        .pricing-box {
+            background: linear-gradient(145deg, #1a1d24 0%, #111318 100%);
+            border: 1px solid var(--whatsapp-green);
+            border-radius: 16px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.05);
+        }
+
+        .pricing-box h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .price-tag {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--whatsapp-green);
+            margin: 0.5rem 0;
+        }
+
+        .pricing-box p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        /* --- DEMOS Y BOTONES --- */
+        .demo-btn {
             display: flex;
             align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            color: var(--text-main);
+            text-decoration: none;
             font-weight: 600;
-            transition: all 0.2s ease;
-            box-shadow: var(--shadow);
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            margin-bottom: 0.8rem;
         }
 
-        .link-card i {
-            width: 32px;
+        .demo-btn span {
+            margin-right: 10px;
             font-size: 1.2rem;
-            color: var(--accent-green);
         }
 
-        .link-card:active {
+        .demo-btn:active {
             transform: scale(0.97);
-            background-color: #1c1c1f;
-        }
-
-        /* Botón CTA (WhatsApp) */
-        .cta-wrapper {
-            margin-top: 25px;
+            background: rgba(255, 255, 255, 0.1);
         }
 
         .cta-btn {
-            background-color: var(--accent-green);
-            color: #000;
-            text-decoration: none;
-            padding: 20px;
-            border-radius: 18px;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            width: 100%;
+            padding: 1.2rem 1rem;
+            background-color: var(--whatsapp-green);
+            color: #000000;
+            text-decoration: none;
             font-weight: 800;
             font-size: 1.1rem;
-            text-transform: uppercase;
-            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+            border-radius: 12px;
+            margin-top: 1rem;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
             animation: pulse 2s infinite;
         }
 
+        .cta-btn:active { transform: scale(0.95); }
+
         @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.02); box-shadow: 0 0 40px rgba(37, 211, 102, 0.5); }
-            100% { transform: scale(1); }
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
         }
 
-        /* Sección Servicios */
-        .services-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 15px;
-        }
-
-        .service-item {
-            background: #111113;
-            padding: 20px;
-            border-radius: 16px;
-            border-left: 4px solid var(--accent-green);
-        }
-
-        .service-item h3 {
-            font-size: 1rem;
-            margin-bottom: 5px;
-        }
-
-        .service-item p {
-            font-size: 0.85rem;
-            color: var(--text-gray);
-            line-height: 1.4;
-        }
-
-        /* Sección FAQ */
-        .faq-container {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        details {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            overflow: hidden;
-        }
-
-        summary {
-            padding: 15px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            cursor: pointer;
-            list-style: none;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        summary::after {
-            content: '+';
-            color: var(--accent-green);
-            font-size: 1.2rem;
-        }
-
-        details[open] summary::after {
-            content: '-';
-        }
-
-        .faq-content {
-            padding: 0 15px 15px 15px;
-            font-size: 0.85rem;
-            color: var(--text-gray);
-            line-height: 1.5;
-        }
-
-        /* Footer */
-        footer {
-            margin-top: 60px;
-            text-align: center;
-            padding-bottom: 20px;
-        }
-
-        .socials {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-bottom: 15px;
-        }
-
-        .socials a {
-            color: var(--text-gray);
-            font-size: 1.4rem;
-        }
-
-        .copy {
-            font-size: 0.7rem;
-            color: #444;
-            letter-spacing: 1px;
-        }
     </style>
 </head>
 <body>
 
-    <div class="content-width">
-        <!-- HEADER -->
-        <header class="header-section">
-            <div class="profile-pic">AD</div>
+    <div class="container">
+        
+        <header>
+            <img src="imagen.png" alt="Logo Asesor Digital UY" class="profile-img">
             <h1>Asesor Digital UY</h1>
-            <p class="tagline">Digitalizamos tu negocio con sistemas automáticos sin costos mensuales.</p>
+            <p class="intro-text">Creamos sistemas simples y efectivos para que tu negocio crezca. <span class="highlight">Sin mensualidades ni comisiones.</span></p>
         </header>
 
-        <!-- CTA PRINCIPAL -->
-        <div class="cta-wrapper">
-            <a href="https://wa.me/59895418669?text=Hola%20Juan,%20quiero%20digitalizar%20mi%20negocio" class="cta-btn">
-                <i class="fa-brands fa-whatsapp"></i> ¡QUIERO MI SISTEMA AHORA!
-            </a>
-        </div>
-
-        <!-- SECCIÓN DEMOS -->
-        <span class="section-label">Explora nuestras Demos</span>
-        <div class="links-container">
-            <a href="https://jotacege68-lgtm.github.io/DEMO-VIEJO-PANCHO/" target="_blank" class="link-card">
-                <i class="fa-solid fa-pizza-slice"></i>
-                Demo Pizzería
-            </a>
-            <a href="#" class="link-card">
-                <i class="fa-solid fa-wrench"></i>
-                Demo Taller Mecánico
-            </a>
-            <a href="#" class="link-card">
-                <i class="fa-solid fa-calendar-days"></i>
-                Demo Agenda Digital
-            </a>
-        </div>
-
-        <!-- SECCIÓN SERVICIOS -->
-        <span class="section-label">Nuestros Servicios</span>
-        <div class="services-grid">
-            <div class="service-item">
-                <h3>Menú Digital</h3>
-                <p>Catálogo interactivo con pedidos directos a tu WhatsApp. Ideal para gastronomía y tiendas.</p>
-            </div>
-            <div class="service-item">
-                <h3>Agendas Online</h3>
-                <p>Sistema de turnos para que tus clientes reserven 24/7 sin que tengas que responder mensajes.</p>
-            </div>
-            <div class="service-item">
-                <h3>Gestión de Talleres</h3>
-                <p>Seguimiento de reparaciones y presupuestos digitales para mayor transparencia.</p>
-            </div>
-        </div>
-
-        <!-- SECCIÓN PREGUNTAS FRECUENTES -->
-        <span class="section-label">Preguntas Frecuentes</span>
-        <div class="faq-container">
-            <details>
-                <summary>¿Tiene costo mensual?</summary>
-                <div class="faq-content">
-                    No. Nuestro modelo es de pago único por el desarrollo. Te olvidas de las suscripciones y mensualidades.
+        <section>
+            <h2 class="section-title">¿Qué podemos hacer por vos?</h2>
+            <div class="services-grid">
+                
+                <div class="service-card">
+                    <div class="service-icon">🍔</div>
+                    <div class="service-content">
+                        <h3>Web Interactiva de Pedidos</h3>
+                        <p>Tus clientes eligen qué comprar y el pedido llega detallado directo a tu WhatsApp.</p>
+                        <span class="service-target">Bares, Pizzerías, Tiendas</span>
+                    </div>
                 </div>
-            </details>
-            <details>
-                <summary>¿Cuánto demora la entrega?</summary>
-                <div class="faq-content">
-                    Una vez que tenemos tu logo y lista de precios, el sistema está listo para funcionar en 48 a 72 horas hábiles.
-                </div>
-            </details>
-            <details>
-                <summary>¿Cómo recibo los pedidos?</summary>
-                <div class="faq-content">
-                    Todos los pedidos llegan detallados directamente a tu WhatsApp con nombre, productos, total y ubicación del cliente.
-                </div>
-            </details>
-        </div>
 
-        <!-- FOOTER -->
-        <footer>
-            <div class="socials">
-                <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <div class="service-card">
+                    <div class="service-icon">📅</div>
+                    <div class="service-content">
+                        <h3>Agendas Inteligentes 24/7</h3>
+                        <p>Olvídate de responder mensajes para dar hora. Tus clientes reservan turno solos.</p>
+                        <span class="service-target">Dentistas, Fisioterapeutas, Salones</span>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🛠️</div>
+                    <div class="service-content">
+                        <h3>Catálogo de Servicios</h3>
+                        <p>Muestra tu trabajo de forma profesional para que te contraten al instante.</p>
+                        <span class="service-target">Talleres, Herreros, Técnicos</span>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🔍</div>
+                    <div class="service-content">
+                        <h3>Presencia en Google</h3>
+                        <p>Te configuramos para aparecer en búsquedas locales y conectar fácil a WhatsApp.</p>
+                        <span class="service-target">Todo tipo de negocio</span>
+                    </div>
+                </div>
+
             </div>
-            <p class="copy">&copy; 2024 ASESOR DIGITAL UY</p>
-        </footer>
+        </section>
+
+        <section>
+            <div class="pricing-box">
+                <h3>Inversión Inteligente</h3>
+                <p>Trabajos a medida con <strong>PAGO ÚNICO</strong>.</p>
+                <div class="price-tag">Desde $2.500</div>
+                <p>(El valor final depende de la complejidad de cada proyecto). ¡Tú eres dueño del sistema, sin ataduras!</p>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-title">Mirá cómo funcionan</h2>
+            
+            <a href="https://asesordigital10.github.io/PIZZERIA-LA-MUZZA/" class="demo-btn" target="_blank">
+                <span>🍕</span> Demo Pizzería "LA MUZZA"
+            </a>
+            
+            <a href="https://asesordigital10.github.io/DEMO-TALLER-AUTOS/" class="demo-btn" target="_blank">
+                <span>🔧</span> Demo Taller "Workshop Pro"
+            </a>
+            
+            <a href="https://asesordigital10.github.io/DEMO-CLINICA-DENTAL/" class="demo-btn" target="_blank">
+                <span>🦷</span> Demo Clínica "Smile Studio"
+            </a>
+        </section>
+
+        <section style="margin-bottom: 2rem;">
+            <a href="https://wa.me/59895418669?text=Hola%20Juan,%20quiero%20digitalizar%20mi%20negocio.%20Me%20gustaría%20saber%20más." class="cta-btn" target="_blank">
+                🚀 ¡QUIERO COTIZAR MI SISTEMA!
+            </a>
+        </section>
+
     </div>
 
 </body>
 </html>
-
-```
